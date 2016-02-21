@@ -1,0 +1,49 @@
+<head>
+  <title>Tweet Finder</title>
+</head>
+
+<body>
+
+<div class="container col-lg-6">
+  <h1><center>Welcome to Tweet Finder!</center></h1>
+  		 <div class="row">
+			{{>list}}
+		</div>
+
+</div>
+ 
+</body>
+
+<template name="list">
+	<form class="form-horizontal">
+		<div class="bs-component">
+			<div class ="form-group ">
+		  		<div class="input-group">
+		    		<span class="input-group-addon ">Handle</span>
+			    		<input type="text" name="handle" class="form-control col-lg-2">
+		  		</div>
+			</div>
+		</div>
+		<div class ="form-group">
+	  		<div class="input-group">
+	    		<span class="input-group-addon ">Topic</span>
+	    			<input type="text" name="topic" class="form-control col-lg-2">
+	  		</div>
+		</div>
+		<div class ="form-group">
+			<span class="input-group-btn">
+	  			<center><button class="btn btn-info" type="button" id="fetchButton">Find</button></center>
+	  		</span>
+	  	</div>
+	  
+	  	<ul class="icons">
+	  		{{#each Tweets}}
+		      		<li> <i class="icon-ok">{{text}}</i></li>
+	  		{{/each}}
+	  	</ul>
+		
+  </form>
+
+</template>
+
+
